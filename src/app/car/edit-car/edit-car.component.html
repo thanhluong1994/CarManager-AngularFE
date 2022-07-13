@@ -1,0 +1,25 @@
+<h1>Sua thong ton oto</h1>
+<a routerLink="/">Danh sach</a>
+<br><br>
+<form (ngSubmit)="edit()" [formGroup]="carForm">
+  <div>
+    <label for="name">Name: </label>
+    <input type="text" id="name" formControlName="name">
+  </div>
+  <div>
+    <label for="price">Price: </label>
+    <input type="text" id="price" formControlName="price">
+  </div>
+  <div>
+    <label for="producer">Producer: </label>
+    <select id="producer" formControlName="producer">
+      <option [ngValue]="" ></option>
+      <ng-container *ngFor="let producer of producers">
+        <option [value]="producer.id">{{producer.name}}</option>
+      </ng-container>
+    </select>
+  </div>
+  <div>
+    <button>Update</button>
+  </div>
+</form>

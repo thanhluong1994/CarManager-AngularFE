@@ -1,0 +1,16 @@
+<h1>Xe co gia cao nhat</h1>
+<a routerLink="/">Danh sach</a>
+<table>
+  <tr>
+    <th>#</th>
+    <th>Name</th>
+    <th>Price</th>
+    <th>Producer</th>
+  </tr>
+  <tr *ngFor="let car of cars;index as i">
+    <td>{{i+1}}</td>
+    <td>{{car.name}}</td>
+    <td>{{car.price}}</td>
+    <td>{{car.producer}}</td>
+  </tr>
+</table>

@@ -1,0 +1,20 @@
+<h1>Xoa oto</h1>
+<a routerLink="/">Danh sach</a>
+<br><br>
+<form [formGroup]="carForm" (ngSubmit)="delete()">
+  <div>
+    <label for="name">Name: </label>
+    <input type="text" id="name" formControlName="name">
+  </div>
+  <div>
+    <label for="price">Price: </label>
+    <input type="text" id="price" formControlName="price">
+  </div>
+  <div>
+    <label for="producer">Name: </label>
+    <input type="text" id="producer" formControlName="producer">
+  </div>
+  <div>
+    <button>Delete</button>
+  </div>
+</form>

@@ -1,0 +1,23 @@
+<h1>Danh sach</h1>
+<a routerLink="/create">Add New</a>
+<br><br>
+<a routerLink="/search">Xe gia cao nhat</a>
+<br><br>
+<table>
+  <tr>
+    <th>Stt</th>
+    <th>Name</th>
+    <th>Price</th>
+    <th>Producer</th>
+    <th>Edit</th>
+    <th>Delete</th>
+  </tr>
+  <tr *ngFor="let car of cars;index as i">
+    <td>{{i+1}}</td>
+    <td>{{car.name}}</td>
+    <td>{{car.price}}</td>
+    <td>{{car.producer.name}}</td>
+    <td><a [routerLink]="['/edit', car.id]">Edit</a></td>
+    <td><a [routerLink]="['/delete', car.id]">Delete</a></td>
+  </tr>
+</table>

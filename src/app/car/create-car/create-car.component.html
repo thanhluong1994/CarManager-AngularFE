@@ -1,0 +1,28 @@
+<h1>Add New</h1>
+<a routerLink="/">Danh sach</a>
+<br><br>
+<form [formGroup]="carForm" (ngSubmit)="createCar()">
+  <div>
+    <label for="name">Name: </label>
+    <input type="text" id="name" formControlName="name">
+  </div>
+  <div *ngIf="nameControl.touched && nameControl.invalid">
+    <p style="color: red" *ngIf="nameControl.errors?.required">Truong nay bat buoc phai nhap</p>
+  </div>
+  <div>
+    <label for="price">Price: </label>
+    <input type="text" id="price" formControlName="price">
+  </div>
+  <div>
+    <label for="producer">Producer: </label>
+    <select id="producer" formControlName="producer">
+      <option [ngValue]="null" >Chon danh muc</option>
+      <ng-container *ngFor="let producer of producers">
+        <option [value]="producer.id">{{producer.name}}</option>
+      </ng-container>
+    </select>
+  </div>
+  <div>
+    <button>Add New</button>
+  </div>
+</form>
